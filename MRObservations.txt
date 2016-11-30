@@ -1,0 +1,135 @@
+word count program observations
+
+3 classes
+
+new data types
+
+generics
+
+.class
+
+inner classes
+
+some java methods = tokenizer, 
+
+inheritence > exntends
+
+polymorphism > 
+
+encapsulation(hiding) > private/protected
+
+general program:
+---------------
+file-A
+[
+library files/ header files/ import files
+
+naming the program
+
+declarations , int i,j
+
+use them > actions > method/fuction
+]
+
+file-B
+
+[
+library files/ header files/ import files
+
+naming the program
+
+declarations , int i,j
+
+use them > actions > method/fuction
+]
+
+file-C
+[
+library files/ header files/ import files
+
+naming the program
+
+declarations , int i,j
+
+use them > actions > method/fuction
+]
+
+map reduce:
+----------
+
+mapper > map logic > a logic applied on the divided data
+reducer > redice logic > a logic applied on the intermediate data to achieve aggregated result
+
+aggregation[doing an operation, always yeids one result] vs consolidation[keeping things together]
+
+reducer can be used for? both aggregation or consolidation
+
+best practice to use reducer for? aggregation
+
+
+LOVE name movies:
+
+map => filter the names with LOVE
+reduce => 10 files into 1 files ; consolidation 
+
+$ ls
+
+a.txt b.txt c.txt
+
+$ cat a.txt b.txt c.txt 
+
+when to use reducer? asper spl intelligence?
+only use when you need aggregation
+
+
+what is the 3rd class? conf/driver/job class
+	mapping classs => configuration class
+
+=> file1driver.java
+=> Driver
+	=> Mapper
+	=> Reducer
+
+=> driver
+=> mapper => (0,line) => line into words, for every word associating with 1 => (ramu,1)
+	input => (int,string)
+	ouput => (string,int)
+<Object, Text, Text, IntWritable> => Kin,Vin,Kout,Vout
+
+=> reducer => (ramu,[1,1,1]) ; (ramu,3)
+<Text,IntWritable,Text,IntWritable>
+
+
+$ hadoop jar wc.jar wordcount /input /output
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

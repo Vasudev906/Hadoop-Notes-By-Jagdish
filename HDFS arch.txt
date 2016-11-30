@@ -1,0 +1,96 @@
+What is BigData?
+	How IBM defined it?
+		Volume > 10 TB
+		Velocity > speed
+		Variety > stru > tables, any file with schema; unstr> without schema :: readable (logs,xml,json,email) or unreadable(audio,video,image,)
+			tables > size
+		Veracity > Trust 
+
+schema > column count, column names, column data types, data type sizes
+
+What is Hadoop?? {both}
+	===> storage, HDFS => hadoop distributed file system
+	===> procesing, MR (hdp1)  => MapReduce
+						YARN (hdp2) => Yet Another Resource Negotiater
+
+	1 + 2 = 3;
+	dilwale.mp4 ; vlc
+
+Processes in Hadoop?
+Hadoop1:
+=======
+HDFS:
+	NameNode and DataNode
+
+MR:
+	JobTracker and TaskTracker
+Hadoop1:
+=======
+HDFS:
+	NameNode and DataNode
+
+YARN:
+	ResourceManager and NodeManager
+	
+==================================================
+HDFS:
+
+DataNode => actual data => blocks
+NameNode => metadata
+
+file => blocks => datanode => 3 copies (replication)
+
+blocks => datanode ==> nameNode 
+
+block size => 64 or 128 mb
+
+YARN: 10,000
+	
+	containers => (cpu,ram,hdd,network)
+
+i7 quad core : 8 gb ram 
+	4 containers => each 1 core + 2 gb => 4 parallel operations
+	
+	instead of 10 days , we can do in 1 day
+	
+	hadoop takes minutes minimum => like a train 
+	
+	containers => nodemanager => resourcemanager
+	
+MapReduce:
+
+	JobTracker => manager 1) scheduling (functional) + 2) job monitoring(tech) ;4000
+	
+	TaskTracker => worker 
+	
+	Slots  => hard coded 
+
+
+
+dummy(){
+print("hello world");
+}
+
+dummy(arg1){
+print(arg1);
+}
+
+100 machines => 
+
+slave machine => datanode + nodemanager => hdp2
+slave machine => datanode + tasktraker => hdp1
+
+=================================================================
+what is mapreduce?
+	=> processing layer in hadoop1
+	=> java code , name of the package => jar bundle ; libraries
+	=> is a way of programming => mapreduce; map => meaning; reduced => meaning
+
+
+
+
+
+
+
+
+
