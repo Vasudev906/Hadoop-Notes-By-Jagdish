@@ -1,0 +1,136 @@
+How to execute a hadoop program?
+$ hadoop jar jar-name prog-name /input /output
+
+input > map > SS > reduce > output
+
+input > map
+	k,v => byteOffset, line => IntWritable, Text
+	
+	What is map?
+		> logic applied on divided data
+		> logic please?
+			1. dividing the line into words				=> StringTokenizer
+			2. associating a value ONE for every word	=> word,one
+			3. emit it									=> context.write()
+			
+map > SS
+	k,v => word, 1 => Text, IntWritable
+	
+	What is SS?
+		> sort and shuffle
+		> sorting the keys + groping the values per key
+			> explain please?
+				are,1
+				are,1
+				are,1	=> are, [1,1,1] 
+				
+SS > reduce
+	k,v => word, list[values] => Text, IntWritable
+		
+		What is Reduce?
+			> logic applied on the intermediate data to produce aggregated result
+			> logic please
+				1. Get the values list
+				2. Loop it						=> for(...)
+				3. Add all the values per key	=> sum+=
+				4. Emit it						=> context.write()
+				
+reduce > output
+	k,v => word, count => Text, IntWritable
+		
+configure at home:
+
+1. hadoop-dir/*.jar
+2. hadoo-dir/lib/*.jar
+
+1. download eclipse - for linux 32 bit
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

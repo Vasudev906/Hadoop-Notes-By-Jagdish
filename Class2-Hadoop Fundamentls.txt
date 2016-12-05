@@ -1,0 +1,48 @@
+Example:
+
+
+1  + 2  = 3
+
+1,2 needed => data => storage managment => HDFS => hadoop distributed file system
++ needed => operation => process managment => MapReduce/YARN => Yet Another Resource Negotiator
+
+hadoop => to do big task
+
+Hadoop1 => HDFS + MR => 2006 till now
+Hadoop2 => HDFS + YARN => 2012 till now
+Hadoop3 => HDFS + YARN => 2016 till now
+
+many computers/nodes  work together => cluster
+===============
+HDFS => master(NameNode) + slave(DataNode)
+
+File => tinyparts(blocks) => 64 mb or 128 mb => every block is availble in 3 copies (replication)
+
+DataNode => home for blocks => acutal data is stored here
+NameNode => metadata => SPOF ==> single point of failure
+
+Hadoop 2 => High Availability
+Active NameNode => sevices
+StandBy NameNode => when active is not reachable ; they share a file "edit logs"
+
+=================
+MapReduce => master(JobTracker) + slave(TaskTracker)
+
+Yarn => master(ResourceManager) + slave(NodeManger) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,212 @@
+5th Dec 2016: 
+------------
+
+Revision:
+---------
+What is Hadoop? [Both]
+	> Storage => HDFS => Hadoop Distributed File System
+	> Processing => YARN/MR => Yet Another Resource Negotiator
+
+Hadoop1 => HDFS + MR
+Hadoop2 => HDFS + YARN
+
+HDFS => NameNode + DataNode
+YARN => ResourceManager + NodeManager
+MR => JobTracker + TaskTracker
+
+What is the tiny unit of Storage?
+	=> Blocks(64MB/128MB) => DataNode(slave) => NameNode(master)
+
+What is the tiny unit of Computational Resource?
+	=> Containers => NodeManager => ResourceManager
+	
+Who will do the work? if any? master or slave? SLAVES
+
+When you call a machine as slave machine? what processes does it need to have?
+		> NodeManager + DataNode
+
+	HDP1 => 64 MB; HDP2 => 128 MB
+
+To program in Hadoop, what is the way => Using MapReduce => Java
+
+What is Map?
+	=> a logic applied on the divided data
+	
+What is Reduce?
+	=> a logic applied on the intermediate data to produce an aggregated final result.
+
+What is aggregation?
+	> converting many inputs into a one/single output using some arithmetic.
+	
+What are examples of aggregation?
+	> 1,2,3 => SUM => 6 
+	> 1,2,3 => MIN => 1 
+	> 1,2,3 => MAX => 3
+	> 1,2,3 => AVG => 2
+	> 1,2,3 => COUNT => 3
+
+What is consolidation?
+	> keeps things together
+	
+What are examples of consolidation?
+	> 1 2 3 => concatenate => 123
+
+------------------------------------------------------------------------------------------------------------
+PIG:
+---
+
+NOTE: this is very very simple. Be an expert here. 
+
+max we have 40 commands => day-to-day life we use 15 commands.
+
+Need?
+
+User => Hadoop => Result
+User => Java => MapReduce => Hadoop => Result
+
+in the world, everyone doesnt know java:
+	
+	Yahoo => invented PIG : a tool to EASE the usage/interaction with hadoop
+
+User => Java => MapReduce => Hadoop => Result
+User => Commands => PIG => Java => MapReduce => Hadoop => Result
+
+PIG => convenience
+MR => control
+
+PIG => full form 
+
+Hadoop => can work on any data (structured/semi-structured/un-structured)
+PIG => an animal can eat anything.
+
+Hadoop => Elephant 
+
+What is PIG? an ecosytem component.
+MS-OFFICE	=> lives on top of foundation	Pig
+----------									------------
+MS-Windows	=> platform/foundation			Hadoop
+
+What is data Processesing?
+	> update
+	> insert
+	> delete		=> above 3 are record level modifications
+	> move places	=> a file level operation
+
+	> select
+	> filter/search
+	> sort / order by
+	> aggregations / group by
+	> distinct
+	> etc
+
+	90% of the time the above are used in data analysis.
+	
+Data Processing => Data Manipulation + Data Analysis
+
+Hadoop is used for Analysis of data. 
+
+Music Sythesizer => MapReduce
+IPod => Pig
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,20 @@
+mkdir hadoop_examples
+  314  cd hadoop_examples/
+  315  ll
+  316  nano wc-input.txt
+  317  cat wc-input.txt 
+  318  hadoop fs -ls /
+  319  hadoop fs -mkdir /hadoop-examples-hdfs
+  320  hadoop fs -ls /
+  321  ll
+  322  hadoop fs -put wc-input.txt /hadoop-examples-hdfs
+  323  hadoop fs -ls /hadoop-examples-hdfs
+  324  cd $HADOOP_HOME
+  325  pwd
+  326  ll
+  327  hadoop jar hadoop-examples-1.0.3.jar wordcount /hadoop-examples-hdfs/wc-input.txt /hadoop-examples-hdfs/wc-output
+  328  hadoop fs -ls /hadoop-examples-hdfs
+  329  hadoop fs -ls /hadoop-examples-hdfs/wc-output
+  330  hadoop fs -cat /hadoop-examples-hdfs/wc-output/part-r-00000
+  331  cd ~/hadoop_examples/wc-input.txt 
+  332  cat ~/hadoop_examples/wc-input.txt

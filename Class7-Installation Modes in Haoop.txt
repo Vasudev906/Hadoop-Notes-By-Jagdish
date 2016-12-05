@@ -1,0 +1,172 @@
+Deamon => long running process (linux word)
+4 processes
+
+Types of Installation:
+
+1. Full distributed Mode:
+	* we are really using hadoop (stroage + process layers)
+	* we have more than one machine (10s or 100s)
+	ex: production cluster
+	
+2. Psuedo distributed mode:
+	* we are really using hadoop (stroage + process layers)
+	* we use only one machine
+	ex: development / testing / vm
+	
+3. Stand Alone Mode:
+	* No hadoop
+	* only hadoop libraries
+	* adhoc operation, quick check
+	
+=================================================================================
+
+How many mappers?
+	=> system decides based on data size
+How many reducers?
+	=> user control, 0, 1, many
+	default is 1
+	
+	# job.setNumReduceTasks(0); -- no aggregation, got answer at map level itself
+	# job.setNumReduceTasks(1); -- aggregation, need exactly one, like min or max
+	# job.setNumReduceTasks(3); -- aggregation, if it doesnt spoil the output
+	
+=====================================================================================
+
+Input Splits:
+
+Block => HDFS
+
+INPUTSPLIT = logical pointer
+
+Mapper => MapReduce	
+	
+	block => 64mb => 67108864 bytes => 
+	vasu => java variable => 4 bytes
+	
+	block1 => va
+	block2 => su
+	
+=========================================================	
+	
+combiner:
+
+	local reducer/ semi reducer / mini reducer 
+		which works at mapper level
+		
+		reuses reducer logic on mapper output at mapper machine level
+
+		can I always use reducer as combiner? YES, but conditions apply
+		
+		commutative and associative principles then you can use.
+		
+			a + b = b + a; ** order is not important
+			a * b = b * a;
+			
+			a - b <> b -a ; dont use reducer as combiner
+			a/b <> b/a ; 
+			
+			a + (b+c) = (a+b) + c; ** group doesnt matter
+
+			sum of 1 million nubmers => addition 
+			avg of 1 million numbers => sum.of.obs/no.of.obs
+			
+partitioner
+	
+	traffic police => route the vehicles
+		routes the key-value pairs to reducer based on keys
+		
+		hash partitioner algorithm => default 
+	
+		ex: divisibility example 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
