@@ -36,3 +36,12 @@ vasu, XX, hard engg, abc@xyz.com, aaa, bbb
 .
 nidhi, XX, technician, abc@xyz.com, aaa, bbb
 
+3.Find movie names with love.
+
+4.Find sum of 1 million numbers.
+
+5.WordCount.
+
+6.WordCount with 3 Reducers.
+
+
