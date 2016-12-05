@@ -1,0 +1,38 @@
+1. JRR Tolkein is the author of LORD OF THE LINGS book.
+	due to some reason he misplaced the names for 2 roles.
+		in the place of FRODO the put the word BILBO.
+		Now he is asking for your help to correct it using hadoop.
+
+input.txt
+----------
+long ago there was a shire on the middle earth
+they live frodo and bilbo happily
+.
+.
+.
+after the dragon is dead bilbo and frodo escaped
+
+	
+		
+2. a terroist attact happend on US visa office, they hacked the data center once upon a time.
+		it contains information related to all US citizens.
+			similar attack is going to happen again.
+				they want your help to encrypt the data of all US citizens.
+				Now they need your help to handle it using hadoop.
+				
+input.txt
+---------
+siva, 23, soft engg, siva@gmail.com, hadoop, java
+vasu, 44, hard engg, vasu@yahoo.com, sql, plsql
+.
+.
+nidhi, 95, technician, nid@hotmail.com, java, .net
+
+output.txt
+----------
+siva, XX, soft engg, abc@xyz.com, aaa, bbb
+vasu, XX, hard engg, abc@xyz.com, aaa, bbb
+.
+.
+nidhi, XX, technician, abc@xyz.com, aaa, bbb
+
