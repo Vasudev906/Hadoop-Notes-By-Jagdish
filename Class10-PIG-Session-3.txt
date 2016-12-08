@@ -1,0 +1,174 @@
+PIG => Day 3:
+-------------
+
+NOTE: after the session, try to do the PIG commands in MR way
+
+
+Local => $ pig -x local
+Cluster => $ pig
+
+Examples:
+--------
+-- for input
+A = LOAD '/etc/passwd';
+
+-- to see the content in a relation
+DUMP A;
+
+What is "A"?
+	=> a VARIABLE
+	=> a RELATION
+	=> a ALIAS
+	=> a BAG
+	=> an OUTER BAG
+	
+	different names for the same thing.
+
+-- to see the schema in a relation
+DESCRIBE A;
+
+-- with delimiter
+B = LOAD '/etc/passwd' USING PigStorage(':');
+
+DESCRIBE B;
+
+-- pig is case insensitive most of the times (i.e. any case is fine for pig commands)
+-- pig is case sensitvie in few parts (names of relations + names of functions)
+
+-- can we process this unstructrud data? using the fields? YES
+-- by using POSITIONAL PARAMETERS
+
+P = FOREACH B GENERATE $0, $5;
+DESCRIBE P;
+
+-- with schema 
+C = LOAD '/etc/passwd' USING PigStorage(':') AS (name:chararray,x:chararray,x1:chararray,x2:chararray,x3:chararray,home:chararray,shell:chararray);
+DUMP C;
+
+P = FOREACH C GENERATE home,shell;
+
+-- utility commands (sh prefix allows you to run a linux command in the grunt/pig shell)
+grunt> sh ls -l
+
+-- fs command (works based on your pig invocation mode either local or cluster)
+grunt> fs -ls /
+
+-- group
+G = GROUP P By shell;
+DUMP G;
+DESCRIBE G;
+
+H = FOREACH G GENERATE group;
+H = FOREACH G GENERATE group, COUNT(group);
+
+-- take away for the day
+1. How to start pig?
+2. Pig commands	
+	- load, dump, foreach, group, describe
+3. synonyms of relation
+4. positional parameters
+5. process data with schema or without schema
+6. utililty commands, sh, fs
+7. How to understand the schema definition
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

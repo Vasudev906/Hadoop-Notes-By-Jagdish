@@ -1,0 +1,188 @@
+PIG => Day 2:
+------------
+
+Day 1 => Intro to PIG, Need of PIG, Compare PIG to MR, 90% of the time we need simple commands
+
+1970 => first RDBMS came into existence
+
+	we have words like tables, records/rows, columns/fields in existence.
+	
+PIG is inspired from that ERA (before RDBMS), so no words related to RDBMS and No words related to SQL mostly.
+
+Data Model:
+-----------
+How data is organised? RDBMS.
+	=> Tables (a group of rows)
+		=> Rows (a group of fields)
+			=> Columns (a field)
+
+How data is organised? PIG.
+	=> Bag (similar to tables)
+		=> Tuples (similar to rows/records)
+			=> Atoms (similar to columns/fields)
+			
+Nesting is possible.  (Bag inside a Bag is possible)
+Complex data type are possible. (complex => more than one value in a column;scalar => one value in one column)
+
+	Array => many values of same type ; example => skillset => sql, java, linux
+	Map => Relational Array => key#value ; example => relevant skillset => sql#2, java#3, linux#1 
+	Struct => a group of similar related entity => exactly like in C language ;
+				example => Address => Address line1, Address line2, Address St, Address Landmark, Address Pincode
+
+PIG => a text user interface => command line interface
+
+BAG => {} => {(siva,25)(nithi,26)}
+Tuple => () => comma separated values "," ; example => (siva,25,M)
+Atom/Field => the value between the commas ; exammple => siva
+Map => [] => # seperates key and value ; example => [java#3]
+
+{(siva,25,M,[java#3])(nithi,26,F,[sql#2])}
+
+In reality this appears as:
+
+(siva,25,M,[java#3])(nithi,26,F,[sql#2])
+
+Normal Data Types:
+------------------
+
+String => chararray
+undefined => bytearray
+
+rest all are normal like int, long, float, boolean
+
+PIG has 2 modes:
+
+1. cluster mode => $ pig
+2. local mode => $ pig -x local
+
+Hadoop Modes:
+============
+Cluster Mode: (hadoop processes are running :: HDFS + YARN/MR)
+	=> Pseudo mode
+	=> Fully distributed mode
+Local Mode: (no hadoop process runs:: LINUX FS + JVM)
+	=> Standalone Mode 
+
+Some Commands:
+
+LOAD => input
+STORE => output
+DUMP => print output to terminal/console
+
+DISTINCT
+GROUP
+ORDER
+UNION
+SPLIT
+FILTER
+JOIN
+
+FOREACH .. GENERATE => select
+
+STREAM
+COGROUP
+
+What is PIG? [Processing]
+	> Storage 
+	> Processing 
+
+sql> create table new_table as select * from a_table A JOIN b_table B ON A.id = B.id WHERE A.name = 'vasu';
+
+Normal Guys: DFL => Data Flow Language => step-by-step manner => same philosophy is behind ETL
+-----------
+Take table_a
+Take table_b
+JOIN A and B, using id column 
+FILTER 'vasu' values
+Store results in new_table
+
+PIG is DFL => everything done in a step-by-step manner
+
+How many steps => that many commands
+
+Take table_a	=> LOAD table_a
+Take table_b	=> LOAD table_b
+JOIN A and B, using id column  => JOIN table_a,table_b
+FILTER 'vasu' values 			=> FILTER 
+Store results in new_table		=> STORE
+
+sql> tries to do everything in one-step
+etl> tried to do everything in multiple step-by-step manner
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
