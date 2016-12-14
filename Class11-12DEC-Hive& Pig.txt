@@ -1,0 +1,200 @@
+
+Hello Good Morning..!
+---------------------
+
+New Tool: "HIVE"
+
+What is the work of a partitioner?
+	> Traffic Police => which routes the key-value pairs to the right reducers
+							based on their keys.
+							
+							
+		hi, hello, how, are, you => 3 reducers => red1, red2, red3
+		
+		Hash mechanism => Hash Partitioner => hash is special number for a key => direction
+								all same keys => always go to same reducer
+								
+								
+							Hi => red1
+							
+						at any cost, all HI's will always go to RED1
+						
+		Partitioner => a class in mapreduce 
+						custom => self design => our own
+						=> create your own partitioner class => extend (subclass) + modify
+												=> method overrideing
+
+						example: Hi => red1 ;; 
+						Dictonary => word count => if you need 26 files as output , what to do?
+												set 26 reducer; 
+							Project + Assignment: => google + how to route + logic to route
+										using dictionary => download
+								
+							*WEBDAV?
+
+	COMMANDS:
+	---------
+	1.LOAD
+	2.STORE
+	3.DUMP
+	4.DESCRIBE
+	5.DISTINCT
+	6.FOREACH ..GENERATE => select columns
+	7.GROUP BY
+	8.ORDER By
+	*9.STREAM => students => using a PIG RELATION => to be process by outside program
+	*10.COGROUP => apply group by on multiple sets
+	11.FILTER
+	*12.SPLIT => students => SPLIT => malestudent ; femalestudent
+	13.JOIN
+	14.UNION
+	15.LIMIT
+
+How to think in SQL?
+	> select count(*) from students;
+
+	> select a,b from emp where b = 50;
+	
+How to think in PIG?
+	> every thing in steps
+	
+	students relation => group it(group) => count (for each)
+						
+	> load 'emp'					
+	> filter b = 50
+	> foreach ... generate a,b
+	> store
+
+
+1. students in a class
+
+sec1:
+----
+surendra,eng
+nithi,math
+siva,math		=> 2 subjects => 2 group
+
+sec2:
+----
+bala,math
+raju,sci
+prasad,hin		=> 3 subjects => 3 groups
+
+for both sec1 and sec2 => 4 subjects => 4 groups
+	
+	
+Assignments:
+-------------
+1. MR => consolidate now
+2. PIG practice => mobaxterm => word count in PIG
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

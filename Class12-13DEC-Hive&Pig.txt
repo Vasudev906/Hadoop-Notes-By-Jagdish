@@ -1,0 +1,217 @@
+13 DEC 2016:
+-----------
+
+TextInputFormat => default input format
+			What happens?
+				=> what is the key, what is the value? => ByteOffset, Line
+					=> what is the data type of key and value? => IntWritable, Text
+						
+						
+2 fields => 200 questions
+						
+15 Word Problems ? Questions
+
+8 fields => 15 word problems from each of you
+
+1. How many records are there?
+2. How many records are there per year?
+3. How many years information is there?
+4. How many records are there for each country?
+5. How many number of athleats are there?
+6. Alphabetically from A to Z => how many players are there?
+7. How many Gold, Silver, Bronze?
+8. How many Gold, Silver, Bronze per Country?
+9. How many Sports are there?
+10. Total number of all medals given?
+
+What is Hadoop? [Both]
+	=> Storage
+	=> Processing
+
+What is PIG? [Processing]
+	=> Storage
+	=> Processing
+
+HIVE:
+----
+
+Designed for the ease of use to interact with Hadoop.
+
+User => Java => MapReduce => Hadoop => Result
+
+User => SQL => HIVE => Java => MapReduce => Hadoop => Result
+
+User just need to know about SQL commands.
+
+In HIVE => hql => Hive Query Language => very similar to SQL
+
+sql> Can you write a meaningful query without having a table name in the query?
+		=> NO
+		
+		to use SQL => we must need Tables
+		
+		Do we have tables in HDFS? NO. All are files/folders
+
+HDFS => file/folders => HIVE => Tables => Storage
+YARN => MapReduce => HIVE => SQL => Processing
+
+HIVE is a magic/illusion which makes us feel like we are using tables and sql.
+	But we are actually using the same old HDFS and MR.
+
+What is HIVE? [Both]
+	=> Storage
+	=> Processing
+
+HIVE is inspired by MySQL database => so the sql commands some what similar to it.
+
+When we install hive, Hive folder is location in HDFS at
+		/user/hive/warehouse
+
+1. create database
+hive> create database World;
+
+/user/hive/warehouse/World.db
+
+2. create table
+hive> create table India (...); we need to provide schema
+
+/user/hive/warehouse/World.db/India
+
+3. put data into system (we do insert in normal databases)
+hive> Load 'file.txt' into table ....
+
+/user/hive/warehouse/World.db/India/file.txt
+
+4. we are ready to analysis
+hive> select count(*) from India;
+
+HIVE and SQL => are same
+
+Common in pig and hive:
+1. both are easy to learn
+2. both can process the data
+3. both takes less time to develop
+
+PIG. do it quickly. Adhoc request. immeadiate research.
+good skills with ETL => they choose pig
+
+Hive over PIG:
+--------------
+1. We are dealing with Storage :: Persistence
+2. We can connect to HIVE with JDBC/ODBC connectors
+3. Having a long term organizational setup
+good skills with SQL => they choose HIVE
+
+Schema on Write, RDBMS, we use schema to write the data
+vs
+Schema on Read, HIVE, we use schema to read the data
+
+hive> create table some_table(some schema) ... delimiter ',' ..
+
+----input.txt
+hi,hello,how-are,you
+
+delimiter ',' => hi			hello		how-are			you
+
+delimiter '-' => hi,hello,how			are,you
+
+HIVE has MetaStore: table => a file or folder => a word 'India' is a table related to a path '/user/hive/warehouse/World/India'
+
+relationship information => is called metadata(for hive) here => METASTORE , (an RDBMS=> can be any thing Mysql or Oracle)
+
+HIVE has External Tables:
+
+Some Times : data is already there in HDFS, you need to play with it like a table.
+	we want to project a table structure on top of the Folder.
+	
+/Surendra/Australia
+
+hive> create external table aussie (....) LOCATION '/Surendra/Australia';
+
+if you drop normal table => data + metadata both deleted
+if you drop external table => metadata only deleted
+
+Major Advantage External: speed, safety, sharing
+
+Assignments:
+-------------
+1. Consolidate the mapreduce Questions.
+2. download olympic data
+3. write word problems for it, each 15 question
+4. consoliate your questions
+5. make pig command to answe those 10 qustions, individually, given by me
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
